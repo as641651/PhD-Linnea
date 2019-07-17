@@ -1,0 +1,65 @@
+# cost 5.07e+10
+
+x = (((R^T L R) + (A^-T B^T B A^-1))^-1 A^-T B^T B A^-1 y)
+
+tmp25 = (A^-T B^T)
+x = (((tmp25 tmp25^T) + (R^T L R))^-1 tmp25 tmp25^T y)
+
+tmp26 = B^T                   # 1
+
+tmp25 = (A^-T tmp26)
+x = (((tmp25 tmp25^T) + (R^T L R))^-1 tmp25 tmp25^T y)
+
+(P11^T L9 U10) = A            # 5.33e+09
+
+tmp25 = (P11^T L9^-T U10^-T tmp26)
+x = (((tmp25 tmp25^T) + (R^T L R))^-1 tmp25 tmp25^T y)
+
+tmp25 = (P11^T L9^-T U10^-T tmp26)
+tmp19 = (tmp25 tmp25^T)
+x = ((tmp19 + (R^T L R))^-1 tmp19 y)
+
+tmp27 = (U10^-T tmp26)        # 8e+09
+
+tmp25 = (P11^T L9^-T tmp27)
+tmp19 = (tmp25 tmp25^T)
+x = ((tmp19 + (R^T L R))^-1 tmp19 y)
+
+tmp28 = (L9^-T tmp27)         # 8e+09
+
+tmp25 = (P11^T tmp28)         # 4e+06
+
+tmp19 = (tmp25 tmp25^T)
+x = ((tmp19 + (R^T L R))^-1 tmp19 y)
+
+tmp19 = (tmp25 tmp25^T)       # 8e+09
+
+x = ((tmp19 + (R^T L R))^-1 tmp19 y)
+
+tmp29 = (L R)                 # 4e+06
+
+x = ((tmp19 + (tmp29^T R))^-1 tmp19 y)
+
+tmp31 = (tmp19 + (tmp29^T R)) # 1.6e+10
+
+x = (tmp31^-1 tmp19 y)
+
+(P35^T L33 U34) = tmp31       # 5.33e+09
+
+x = (U34^-1 L33^-1 P35 tmp19 y)
+
+tmp32 = (tmp19 y)             # 8e+06
+
+x = (U34^-1 L33^-1 P35 tmp32)
+
+tmp40 = (P35 tmp32)           # 2e+03
+
+x = (U34^-1 L33^-1 tmp40)
+
+tmp41 = (L33^-1 tmp40)        # 4e+06
+
+x = (U34^-1 tmp41)
+
+tmp17 = (U34^-1 tmp41)        # 4e+06
+
+x = tmp17

@@ -1,0 +1,18 @@
+{
+    "main":
+    {
+        "language": "Julia",
+        "julia_data_type": "Float64",
+        "merging_branches": true,
+        "dead_ends": true,
+        "algorithms_limit": 100,
+        "output_name": "tmp",
+        "generate_graph": false,
+        "generate_derivation": false,
+        "generate_code": true,
+        "generate_experiments": false,
+        "verbosity": 1,
+        "graph_style": "full",
+        "output_code_path": "."
+    }
+}
